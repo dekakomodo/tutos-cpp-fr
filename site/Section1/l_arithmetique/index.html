@@ -497,6 +497,25 @@
         
       
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sigma" viewBox="0 0 24 24"><path d="M18 7V5a1 1 0 0 0-1-1H6.5a.5.5 0 0 0-.4.8l4.5 6a2 2 0 0 1 0 2.4l-4.5 6a.5.5 0 0 0 .4.8H17a1 1 0 0 0 1-1v-2"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  L'arithmétique
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
       <a href="././" class="md-nav__link md-nav__link--active">
         
   
@@ -514,6 +533,48 @@
   
 
       </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="Table des matières">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#les-operateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les opérateurs
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-operateurs-daffectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les opérateurs d'affectations
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -544,6 +605,11 @@
                       
                     
                     
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
                   
                   <div class="md-sidebar__inner">
                     
@@ -555,6 +621,36 @@
   
     
   
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table des matières
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#les-operateurs" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les opérateurs
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#les-operateurs-daffectations" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Les opérateurs d'affectations
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -577,9 +673,100 @@
 
 <h1 id="larithmetique">L'arithmétique<a class="headerlink" href="#larithmetique" title="Permanent link">&para;</a></h1>
 <p>En programmation il peut être utile d'effectuer des calculs mathématiques. Le C++ nous donne donc la possibilité de le faire avec des opérations arithmétiques. Ici le code vaut mille mot.</p>
-<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">expression</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">);</span>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">expression</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mi">5</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="p">(</span><span class="mi">4</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="p">};</span>
 </span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">expression</span><span class="p">;</span><span class="w"> </span><span class="c1">//On affiche le résultat à l'écran</span>
 </span></code></pre></div>
+<blockquote>
+<p>On remarque que l'écran affiche <em>10</em> et non <code>5 * (4-2)</code>, c'est-à-dire que le compilateur peut effectuer nos calculs comme le ferait une calculatrice. </p>
+</blockquote>
+<p>Regardons un exemple plus pratique de ceci. Imaginons que nous dévelopions un jeu vidéo, où le score du joueur doit être augmenté.</p>
+<p><div class="language-c++ highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">//on store le score dans une variable</span>
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="c1">// ... plus loin</span>
+</span><span id="__span-1-3"><a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="n">score</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="mi">1</span><span class="p">;</span>
+</span></code></pre></div>
+Ici on assigne au <code>score</code> la valeur actuelle de celui-ci plus 1, donc on l'augmente de un. D'ailleur il existe un racourci pour faire ceci (même deux).</p>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">nb1</span><span class="w"> </span><span class="p">{</span><span class="mi">2</span><span class="p">};</span>
+</span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="n">nb1</span><span class="w"> </span><span class="o">+=</span><span class="w"> </span><span class="mi">4</span><span class="p">;</span><span class="w"> </span><span class="c1">//on ajoute quatre à la valeur de nb1</span>
+</span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a>
+</span><span id="__span-2-4"><a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="kt">int</span><span class="w"> </span><span class="n">nb2</span><span class="w"> </span><span class="p">{</span><span class="mi">3</span><span class="p">};</span>
+</span><span id="__span-2-5"><a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="o">++</span><span class="n">nb2</span><span class="p">;</span><span class="w"> </span><span class="c1">//on augmente la valeur de nb2 une fois.</span>
+</span><span id="__span-2-6"><a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a>
+</span><span id="__span-2-7"><a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Nombre 1 : "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nb1</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s"> Nombre 2 : "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nb2</span><span class="p">;</span>
+</span></code></pre></div>
+<blockquote>
+<ul>
+<li>
+<p>Pour le premier racourci, <code>nb1</code> était égal à deux. On l'a ensuite ajouté à <em>4</em> (comme si on faisait <code>nb1 = nb1 + 4</code>) pour obtenir 6.</p>
+</li>
+<li>
+<p>Pour le deuxième racourci on à utilisé l'opérateur d'incrément pour passer de <em>3</em> à <em>4</em>.</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="les-operateurs">Les opérateurs<a class="headerlink" href="#les-operateurs" title="Permanent link">&para;</a></h2>
+<p>Comme on a vu, pour faire nos opérations arithmétiques on a utilisé des <em>opérateurs</em>, notamment l'opérateur d'addition (<code>+</code>), d'affectation d'addition (<code>+=</code>) et d'incrément (<code>++</code>). Toutefois le C++ nous offre beaucoup plus d'options. Voici une petite liste des opérateurs du C++ qu'on utilisera en arithmétique.</p>
+<table>
+<thead>
+<tr>
+<th>Nom</th>
+<th style="text-align: center;">Symbole</th>
+<th>Résultat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Addition</td>
+<td style="text-align: center;"><code>+</code></td>
+<td>Somme de deux nombres</td>
+</tr>
+<tr>
+<td>Soustraction</td>
+<td style="text-align: center;"><code>-</code></td>
+<td>Différence de deux nombres</td>
+</tr>
+<tr>
+<td>Multiplication</td>
+<td style="text-align: center;"><code>*</code></td>
+<td>Produit de deux nombres</td>
+</tr>
+<tr>
+<td>Division</td>
+<td style="text-align: center;"><code>/</code></td>
+<td>Quotient de deux nombres</td>
+</tr>
+<tr>
+<td>Modulo</td>
+<td style="text-align: center;"><code>%</code></td>
+<td><a href="https://fr.wikipedia.org/wiki/Reste" title="Par exemple le reste de la division 7 / 2 est 1 puisque 2 * 3 + 1 = 5."><strong>Reste</strong></a> de la division de deux nombres</td>
+</tr>
+</tbody>
+</table>
+<details class="note">
+<summary>Note</summary>
+<p>Il existe des opérateurs qui ne sont pas dédiés à l'arithmétique. Il seront donc couverts dans une prochaine section.</p>
+</details>
+<p><strong>Un exemple</strong>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="mf">3.14</span><span class="w"> </span><span class="p">};</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="p">{</span><span class="mi">9</span><span class="p">};</span>
+</span><span id="__span-3-3"><a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="kt">int</span><span class="w"> </span><span class="n">nb2</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">};</span>
+</span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>
+</span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w">   </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"9 x pi = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">pi</span><span class="w"> </span>
+</span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a><span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">9 / pi = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">pi</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">            </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">9/ 4 = "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nb2</span><span class="p">;</span>
+</span></code></pre></div>
+Ici on effectue des opérations sur des nombres de manière assez habituelle; cependant, on dirait qu'il y a une erreur. Le programme affirme que <code>9 / 4 = 2</code>, alors que ce n'est clairement pas vrai, la réponse réelle devrait être un nombre décimal. Le programme <em>se trompe</em> car il considère que <code>nombre</code> et <code>nb2</code> sont des nombres entiers (type <code>int</code>).</p>
+<div class="admonition warning">
+<p class="admonition-title">Attention</p>
+<p>La division de deux entiers en C++ donnera toujours un autre entier.</p>
+</div>
+<p>Donc, il enlève la partie décimale, ce qui n'arrive pas lorsqu'on divise un nombre par pi, comme celui-ci est décimal.</p>
+<p><strong>La solution</strong>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">double</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="p">{</span><span class="mf">9.0</span><span class="p">};</span><span class="w"> </span><span class="c1">//changer le type à double (décimal)</span>
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">int</span><span class="w"> </span><span class="n">nb2</span><span class="w"> </span><span class="p">{</span><span class="mi">4</span><span class="p">};</span>
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>
+</span><span id="__span-4-4"><a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">/</span><span class="w"> </span><span class="n">nb2</span><span class="p">;</span><span class="w"> </span><span class="c1">//2.25</span>
+</span></code></pre></div></p>
+<h2 id="les-operateurs-daffectations">Les opérateurs d'affectations<a class="headerlink" href="#les-operateurs-daffectations" title="Permanent link">&para;</a></h2>
 
 
 

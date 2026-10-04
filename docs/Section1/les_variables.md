@@ -63,6 +63,9 @@ Notre programme fonctionne! Par contre, une chose cloche : avant d'utiliser notr
 
 
 ```
+!!! Warning "Attention"
+    Sachez qu'en programmation les nombres décimaux sont séparés par des points (.) et non des virgules (,)
+
 J'ai mentionné qu'il y avait deux méthode pour initialiser une variable en une ligne. Logiquement, on peut se demander laquelle est la meilleure. Pour l'instant, il s'agit de l'initialisation par liste, ex. `double nombre {17.5};`. Nous explorerons les détails plus loins dans les leçons, mais pour le moment on peut se contenter d'utiliser cette méthode.
 
 !!! tip "Conseil"
