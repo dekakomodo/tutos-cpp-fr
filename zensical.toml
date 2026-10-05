@@ -18,7 +18,7 @@ nav = [
   {"Section 1" = [
     "Section1/les_variables.md",
     "Section1/l_arithmetique.md",
-
+    "Section1/interagir_avec_la_console.md",
   ] },
   
 ]

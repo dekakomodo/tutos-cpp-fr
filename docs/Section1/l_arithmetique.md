@@ -11,14 +11,15 @@ std::cout << expression; //On affiche le résultat à l'écran
 ```
 >On remarque que l'écran affiche *10* et non `5 * (4-2)`, c'est-à-dire que le compilateur peut effectuer nos calculs comme le ferait une calculatrice. 
 
-Regardons un exemple plus pratique de ceci. Imaginons que nous dévelopions un jeu vidéo, où le score du joueur doit être augmenté.
+## Un exemple
+Imaginons que nous dévelopions un jeu vidéo, où le score du joueur doit être augmenté. Voici comment on pourrait le faire, grâce à une variable et aux opérations.
 
 ``` c++
 int score {0}; //on store le score dans une variable
 // ... plus loin
 score = score + 1;
 ```
-Ici on assigne au `score` la valeur actuelle de celui-ci plus 1, donc on l'augmente de un. D'ailleur il existe un racourci pour faire ceci (même deux).
+Ici on assigne au `score` la valeur actuelle de celui-ci plus 1, donc on l'augmente de un. D'ailleur il existe un racourci pour ajouter une valeur à une variable(même deux).
 
 ``` c++
 int nb1 {2};
@@ -54,13 +55,16 @@ Comme on a vu, pour faire nos opérations arithmétiques on a utilisé des *opé
 ??? note
     Il existe des opérateurs qui ne sont pas dédiés à l'arithmétique. Il seront donc couverts dans une prochaine section.
 
-**Un exemple**
-``` c++
+### Des opérations entre plusieurs variables
+Au lieu de se contenter d'additioner des variables avec des nombres, pourquoi ne pas additioner des variables avec d'autres variables ou de les multiplier entre elles?
+
+
+``` c++ title="Un exemple et un problème"
 double pi { 3.14 };
 int nombre {9};
 int nb2 {4};
 
-std::cout   << "9 x pi = " << nombre * pi 
+std::cout   << "9 x pi = " << nombre * pi  // le produit de deux variables
             << "\n9 / pi = " << nombre / pi
             << "\n9/ 4 = " << nombre / nb2;
 ```
@@ -71,12 +75,58 @@ Ici on effectue des opérations sur des nombres de manière assez habituelle; ce
 
 Donc, il enlève la partie décimale, ce qui n'arrive pas lorsqu'on divise un nombre par pi, comme celui-ci est décimal.
 
-**La solution**
-``` c++
+
+``` c++ title="La solution"
 double nombre {9.0}; //changer le type à double (décimal)
 int nb2 {4};
 
 std::cout << nombre / nb2; //2.25
 ```
 
-## Les opérateurs d'affectations
+### Les opérateurs d'affectations
+Comme discuté  [au dessus](#un-exemple), il est possible d'affecter à une variable le résultat d'une opération sur elle même. On l'avait fait avec l'addition, mais sachez que ce racourci fonctionne avec toutes les opérations. 
+``` c++
+int n1 {10};
+n1 += 2;//n1 = 10 + 2 = 12
+n1 *= 4; //n1 =  12 * 4 = 48
+
+n1 /= 6; //n1 = 48 / 6 = 8
+n1 %= 3; //n1 = 8 % 3 = 2
+
+```
+>Dans l'exemple ci-dessus, les commentaires expliquent l'opération effectuée sur n1. On ajoute **2**, puis on multiplie par **4**, on divise par **6** et puis on trouve le reste avec **3**.
+
+## Exercices
+Pour tester vos connaisances voici deux petits exercices.
+``` c++ title="Un exercice classique"
+double nombre{7.5};
+nombre = nombre - 1.5;
+nombre *= 3;
+
+```
+!!! Question
+
+    Quel est la valeur de `nombre`?
+
+    ??? info "Réponse"
+        **18**. On enlève 1.5 à 7.5 pour obtenir 6. On multiplie 6 par 3 pour avoir 18.
+
+***
+
+``` c++ title="Question Piège"
+int decimal{14};
+decimal /= 4;
+decimal + 2;
+
+```
+!!! Question
+
+    Quel est la valeur de `decimal`?
+
+    ??? info "Réponse"
+        **3**. La question comprenait deux pièges malins. Premièrement, lorsqu'on divise `decimal` par 4 comme celui-ci est un nombre entier (`int`) le C++ retire la portion décimale du résultat (On 3 au lieu de 3,5). Deuxièmement, la ligne `decimal + 2;` ne fait absolument rien! On demande simplement au C++ de trouver la valeur de `decimal` plus deux, et puis de ne pas l'utiliser.
+
+***
+
+!!! Warning "Attention"
+    Il est crucial de distinguer une expression comme `x+2` de `x +=2`. La première n'a aucun effet seule, tandis que la deuxième augment réellement la valeur de x de 2.
