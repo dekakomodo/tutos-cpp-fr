@@ -67,9 +67,44 @@ int main(){
 }
 
 ```
-Ici veuillons noter quelques choses. D'abord, au lieu d'utiliser l'opérateur de décalage gauche (`<<`) on utilise le droit (`>>`), pour storer la réponse. Ensuite, notre programme assume que l'utilisateur répondra avec un nombre, si ce n'est pas le cas nous aurons des problèmes. Nous réglerons ceux-ci plus loin dans le cours. Enfin, il est également possible de receuillir des données textuelles (chaînes de caractères), mais comme nous n'avons pas encore étudié celles-ci, il vaut mieux en parler plus tard.
+Ici veuillons noter quelques choses. 
+
+- D'abord, au lieu d'utiliser l'opérateur de décalage gauche (`<<`) on utilise le droit (`>>`), pour storer la réponse.
+
+- Ensuite, notre programme assume que l'utilisateur répondra avec un nombre, si ce n'est pas le cas nous aurons des problèmes. Nous réglerons ceux-ci plus loin dans le cours.
+
+- Enfin, il est également possible de receuillir des données textuelles (chaînes de caractères), mais comme nous n'avons pas encore étudié celles-ci, il vaut mieux en parler plus tard.
 
 #Exercices
+
+!!! Question
+
+    Trouvez l'erreur : 
+    ``` c++
+    int a{};
+    std::cin << a;
+    std::cout >> "Vous avez entré " >> a;
+    ```
+
+    ??? info "Réponse"
+        Les opérateurs de décalages (`<<` et `>>`) sont inversés. `std::cin` utilise `>>` et `std::cout` utilise `<<`.
+
+!!! Question
+
+    Écrivez un programme qui prend un nombre décimal de l'utilisateur et nous indique son carré.
+    
+
+    ??? info "Réponse"
+        ``` c++
+        #include <iostream>
+        int main(){
+            double nombre{}; //double car c'est un nombre decimal
+            std::cout << "Entrez un nombre : ";
+            std::cin >> nombre;
+
+            std::cout << "Le carré de " << nombre << " est de " << nombre * nombre <<'\n';
+        }
+        ```
 
 
 

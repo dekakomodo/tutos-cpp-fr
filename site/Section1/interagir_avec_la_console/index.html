@@ -850,8 +850,47 @@ Le résultat affiché sera le même.</p>
 </span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"</span><span class="se">\n</span><span class="s">Votre nombre est : "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">reponse</span><span class="p">;</span>
 </span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="p">}</span>
 </span></code></pre></div>
-Ici veuillons noter quelques choses. D'abord, au lieu d'utiliser l'opérateur de décalage gauche (<code>&lt;&lt;</code>) on utilise le droit (<code>&gt;&gt;</code>), pour storer la réponse. Ensuite, notre programme assume que l'utilisateur répondra avec un nombre, si ce n'est pas le cas nous aurons des problèmes. Nous réglerons ceux-ci plus loin dans le cours. Enfin, il est également possible de receuillir des données textuelles (chaînes de caractères), mais comme nous n'avons pas encore étudié celles-ci, il vaut mieux en parler plus tard.</p>
+Ici veuillons noter quelques choses. </p>
+<ul>
+<li>
+<p>D'abord, au lieu d'utiliser l'opérateur de décalage gauche (<code>&lt;&lt;</code>) on utilise le droit (<code>&gt;&gt;</code>), pour storer la réponse.</p>
+</li>
+<li>
+<p>Ensuite, notre programme assume que l'utilisateur répondra avec un nombre, si ce n'est pas le cas nous aurons des problèmes. Nous réglerons ceux-ci plus loin dans le cours.</p>
+</li>
+<li>
+<p>Enfin, il est également possible de receuillir des données textuelles (chaînes de caractères), mais comme nous n'avons pas encore étudié celles-ci, il vaut mieux en parler plus tard.</p>
+</li>
+</ul>
 <h1 id="exercices">Exercices<a class="headerlink" href="#exercices" title="Permanent link">&para;</a></h1>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Trouvez l'erreur : 
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">a</span><span class="p">{};</span>
+</span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="s">"Vous avez entré "</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">a</span><span class="p">;</span>
+</span></code></pre></div></p>
+<details class="info">
+<summary>Réponse</summary>
+<p>Les opérateurs de décalages (<code>&lt;&lt;</code> et <code>&gt;&gt;</code>) sont inversés. <code>std::cin</code> utilise <code>&gt;&gt;</code> et <code>std::cout</code> utilise <code>&lt;&lt;</code>.</p>
+</details>
+</div>
+<div class="admonition question">
+<p class="admonition-title">Question</p>
+<p>Écrivez un programme qui prend un nombre décimal de l'utilisateur et nous indique son carré.</p>
+<details class="info">
+<summary>Réponse</summary>
+<div class="language-c++ highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
+</span><span id="__span-7-2"><a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
+</span><span id="__span-7-3"><a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a><span class="w">    </span><span class="kt">double</span><span class="w"> </span><span class="n">nombre</span><span class="p">{};</span><span class="w"> </span><span class="c1">//double car c'est un nombre decimal</span>
+</span><span id="__span-7-4"><a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Entrez un nombre : "</span><span class="p">;</span>
+</span><span id="__span-7-5"><a id="__codelineno-7-5" name="__codelineno-7-5" href="#__codelineno-7-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">nombre</span><span class="p">;</span>
+</span><span id="__span-7-6"><a id="__codelineno-7-6" name="__codelineno-7-6" href="#__codelineno-7-6"></a>
+</span><span id="__span-7-7"><a id="__codelineno-7-7" name="__codelineno-7-7" href="#__codelineno-7-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Le carré de "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">" est de "</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="n">nombre</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="sc">'\n'</span><span class="p">;</span>
+</span><span id="__span-7-8"><a id="__codelineno-7-8" name="__codelineno-7-8" href="#__codelineno-7-8"></a><span class="p">}</span>
+</span></code></pre></div>
+</details>
+</div>
 
 
 
