@@ -106,5 +106,28 @@ Ici veuillons noter quelques choses.
         }
         ```
 
+!!! Example "Défi"
+
+    Écrivez un programme qui calcule l'IMC (indice de masse corporelle) de quelqu'un selon la formule
+     
+    IMC = Masse (kg) / (Taille (m))<sup>2</sup>
+    
+
+    ??? info "Réponse"
+        ``` c++
+        #include <iostream>
+        int main(){
+            double masse{};
+            double taille{};
+            std::cout << "Entrez la masse du sujet en kg : \n";
+            std::cin >> masse;
+
+            std::cout << "Entrez la taille du sujet en m : \n";
+            std::cin >> taille;
+
+            std::cout << "L\'IMC du sujet est de : " << masse / (taille * taille);
+        }
+        ```
+
 
 
