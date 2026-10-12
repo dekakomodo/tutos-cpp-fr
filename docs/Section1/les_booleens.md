@@ -47,7 +47,7 @@ Les opérateurs de comparaisons nous permettent de tirer une valeur booléenne d
 !!! warning "Attention"
     Ne confondez surtout pas le symbole `=` avec le symbole `==`. Le premier sert à changer la valeur d'une variable, le deuxième sert à comparer deux valeurs.
 
-Comme une expression de comparaison peut être vraie ou fausse, il est normal qu'on puisse assigner sa valeur à une variable booléene.
+Comme une expression de comparaison peut être vraie ou fausse, il est normal qu'on puisse assigner sa valeur à une variable booléenne.
 
 ``` c++
 #include <iostream>
@@ -68,14 +68,14 @@ int main(){
     std::cout << "Il fait combien dehors : ";
     std::cin >> temp;
 
-    std::cout << (temp <= 10);
+    std::cout << std::boolalpha << (temp <= 10);
 }
 
 ```
 > Une chose embêtante est que le programme répond simplement par `true`. Ne vous inquietez pas, nous arriverons à le faire dire quelque chose de plus intéréssant dans la prochaine leçon.
 
 ### Les opérateurs booléens
-Il est possible que nous devrons programmer des conditions composée. Par exemple, on veut savoir si le score d'un joueur est plus petit que 3 mais plus grand que 0.
+Il est possible que nous devrons programmer des conditions composées. Par exemple, on veut savoir si le score d'un joueur est plus petit que 3 mais plus grand que 0.
 ``` c++ title="Une première tentative"
 int score {100}; //un score arbitraire
 bool condition {0 < score < 3};
@@ -100,7 +100,7 @@ Au lieu d'utiliser le ***et*** logique nous pouvons utiliser le ***ou*** logique
 int nb{6};
 
 bool est_pair {nb % 2 == 0}; //l'operateur modulo est decrit en 1.2
-bool est_impair {!est_pair}; //la negation d'un nombre impair
+bool est_impair {!est_pair}; //la negation d'un nombre pair
 
 bool divisible_par_3 {nb % 3 == 0};
 bool divisible_par_6 {divisible_par_3 && divisible_par_2}; 

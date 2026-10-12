@@ -75,7 +75,7 @@ Ici veuillons noter quelques choses.
 
 - Enfin, il est également possible de receuillir des données textuelles (chaînes de caractères), mais comme nous n'avons pas encore étudié celles-ci, il vaut mieux en parler plus tard.
 
-#Exercices
+## Exercices
 
 !!! Question
 

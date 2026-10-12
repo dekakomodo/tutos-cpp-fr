@@ -16,6 +16,8 @@
         <link rel="prev" href="../interagir_avec_la_console/">
       
       
+        <link rel="next" href="../le_branchement_conditionnel/">
+      
       
         
       
@@ -241,6 +243,8 @@
       
         
       
+        
+      
     
     
     
@@ -405,6 +409,8 @@
   
     
     
+      
+        
       
         
       
@@ -664,6 +670,35 @@
 
               
             
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../le_branchement_conditionnel/" class="md-nav__link">
+        
+  
+  
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-split" viewBox="0 0 24 24"><path d="M16 3h5v5M8 3H3v5"/><path d="M12 22v-8.3a4 4 0 0 0-1.172-2.872L3 3M15 9l6-6"/></svg>
+  
+  <span class="md-ellipsis">
+    
+  
+  Le branchement conditionnel
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
           </ul>
         </nav>
       
@@ -853,7 +888,7 @@
 <p class="admonition-title">Attention</p>
 <p>Ne confondez surtout pas le symbole <code>=</code> avec le symbole <code>==</code>. Le premier sert à changer la valeur d'une variable, le deuxième sert à comparer deux valeurs.</p>
 </div>
-<p>Comme une expression de comparaison peut être vraie ou fausse, il est normal qu'on puisse assigner sa valeur à une variable booléene.</p>
+<p>Comme une expression de comparaison peut être vraie ou fausse, il est normal qu'on puisse assigner sa valeur à une variable booléenne.</p>
 <div class="language-c++ highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="cp">#include</span><span class="w"> </span><span class="cpf">&lt;iostream&gt;</span>
 </span><span id="__span-2-2"><a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="kt">int</span><span class="w"> </span><span class="nf">main</span><span class="p">(){</span>
 </span><span id="__span-2-3"><a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w">    </span><span class="kt">int</span><span class="w"> </span><span class="n">temperature</span><span class="p">{</span><span class="mi">20</span><span class="p">};</span>
@@ -871,14 +906,14 @@
 </span><span id="__span-3-4"><a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="s">"Il fait combien dehors : "</span><span class="p">;</span>
 </span><span id="__span-3-5"><a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cin</span><span class="w"> </span><span class="o">&gt;&gt;</span><span class="w"> </span><span class="n">temp</span><span class="p">;</span>
 </span><span id="__span-3-6"><a id="__codelineno-3-6" name="__codelineno-3-6" href="#__codelineno-3-6"></a>
-</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
+</span><span id="__span-3-7"><a id="__codelineno-3-7" name="__codelineno-3-7" href="#__codelineno-3-7"></a><span class="w">    </span><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">boolalpha</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="p">(</span><span class="n">temp</span><span class="w"> </span><span class="o">&lt;=</span><span class="w"> </span><span class="mi">10</span><span class="p">);</span>
 </span><span id="__span-3-8"><a id="__codelineno-3-8" name="__codelineno-3-8" href="#__codelineno-3-8"></a><span class="p">}</span>
 </span></code></pre></div>
 <blockquote>
 <p>Une chose embêtante est que le programme répond simplement par <code>true</code>. Ne vous inquietez pas, nous arriverons à le faire dire quelque chose de plus intéréssant dans la prochaine leçon.</p>
 </blockquote>
 <h3 id="les-operateurs-booleens">Les opérateurs booléens<a class="headerlink" href="#les-operateurs-booleens" title="Permanent link">&para;</a></h3>
-<p>Il est possible que nous devrons programmer des conditions composée. Par exemple, on veut savoir si le score d'un joueur est plus petit que 3 mais plus grand que 0.
+<p>Il est possible que nous devrons programmer des conditions composées. Par exemple, on veut savoir si le score d'un joueur est plus petit que 3 mais plus grand que 0.
 <div class="language-c++ highlight"><span class="filename">Une première tentative</span><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="p">{</span><span class="mi">100</span><span class="p">};</span><span class="w"> </span><span class="c1">//un score arbitraire</span>
 </span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a><span class="kt">bool</span><span class="w"> </span><span class="n">condition</span><span class="w"> </span><span class="p">{</span><span class="mi">0</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="n">score</span><span class="w"> </span><span class="o">&lt;</span><span class="w"> </span><span class="mi">3</span><span class="p">};</span>
 </span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a><span class="n">std</span><span class="o">::</span><span class="n">cout</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">std</span><span class="o">::</span><span class="n">boolalpha</span><span class="w"> </span><span class="o">&lt;&lt;</span><span class="w"> </span><span class="n">condition</span><span class="p">;</span>
@@ -902,7 +937,7 @@
 <p><div class="language-c++ highlight"><span class="filename">Un exemple</span><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a><span class="kt">int</span><span class="w"> </span><span class="n">nb</span><span class="p">{</span><span class="mi">6</span><span class="p">};</span>
 </span><span id="__span-6-2"><a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>
 </span><span id="__span-6-3"><a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a><span class="kt">bool</span><span class="w"> </span><span class="n">est_pair</span><span class="w"> </span><span class="p">{</span><span class="n">nb</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">2</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span><span class="w"> </span><span class="c1">//l'operateur modulo est decrit en 1.2</span>
-</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kt">bool</span><span class="w"> </span><span class="n">est_impair</span><span class="w"> </span><span class="p">{</span><span class="o">!</span><span class="n">est_pair</span><span class="p">};</span><span class="w"> </span><span class="c1">//la negation d'un nombre impair</span>
+</span><span id="__span-6-4"><a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a><span class="kt">bool</span><span class="w"> </span><span class="n">est_impair</span><span class="w"> </span><span class="p">{</span><span class="o">!</span><span class="n">est_pair</span><span class="p">};</span><span class="w"> </span><span class="c1">//la negation d'un nombre pair</span>
 </span><span id="__span-6-5"><a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>
 </span><span id="__span-6-6"><a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a><span class="kt">bool</span><span class="w"> </span><span class="n">divisible_par_3</span><span class="w"> </span><span class="p">{</span><span class="n">nb</span><span class="w"> </span><span class="o">%</span><span class="w"> </span><span class="mi">3</span><span class="w"> </span><span class="o">==</span><span class="w"> </span><span class="mi">0</span><span class="p">};</span>
 </span><span id="__span-6-7"><a id="__codelineno-6-7" name="__codelineno-6-7" href="#__codelineno-6-7"></a><span class="kt">bool</span><span class="w"> </span><span class="n">divisible_par_6</span><span class="w"> </span><span class="p">{</span><span class="n">divisible_par_3</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="n">divisible_par_2</span><span class="p">};</span><span class="w"> </span>
@@ -970,6 +1005,22 @@ Nous voyons donc à quel point les expressions booléennes sont intéréssantes.
             </div>
           </a>
         
+        
+          
+          <a href="../le_branchement_conditionnel/" class="md-footer__link md-footer__link--next" aria-label="Suivant: Le branchement conditionnel">
+            <div class="md-footer__title">
+              <span class="md-footer__direction">
+                Suivant
+              </span>
+              <div class="md-ellipsis">
+                Le branchement conditionnel
+              </div>
+            </div>
+            <div class="md-footer__button md-icon">
+              
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-arrow-right" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+            </div>
+          </a>
         
       </nav>
     
