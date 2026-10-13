@@ -21,6 +21,7 @@ nav = [
     "Section1/interagir_avec_la_console.md",
     "Section1/les_booleens.md",
     "Section1/le_branchement_conditionnel.md",
+    "Section1/les_boucles_while.md",
   ] },
   
 ]
